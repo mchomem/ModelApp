@@ -1,5 +1,8 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+The idea of project is work with web api 2 and Entity Frameword Code First on backend layer and vanilla javascript on frontend layer.
+In this actual moment, this project serve how concept proof to many features how custom menu and creation of javascript components in the front-end layer.
+This project is not finished, is under construction.
+
 
 # Getting Started
 TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
