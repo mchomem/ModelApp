@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="interface/style/libs/w3.css" />
+    <link rel="stylesheet" href="interface/style/libs/fontawesome-free-5.2.0-web/css/all.css" />
+    <link rel="stylesheet" href="interface/style/login.css" />
+    <link rel="icon" href="interface/image/group.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="interface/js/ui-component/dialog.js"></script>
+    <script type="text/javascript" src="interface/js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../views/interface/js/utils.js"></script>
+    <script type="text/javascript" src="../views/interface/js/server.js"></script>
+    <script type="text/javascript" src="../views/interface/js/login.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            Login.init();
+        });
+    </script>
+    <title>App</title>
+</head>
+<body class="w3-content" style="max-width:500px;">
+    <div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-col">
+                <form class="w3-card-4">
+                    <p>
+                        <div class="w3-row">
+                            <div class="w3-col w3-center">
+                                <h1>Login</h1>
+                            </div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="w3-row-padding">
+                            <div class="w3-col">
+                                <label>Usuário</label>
+                                <input id="txtUser" class="w3-input w3-border w3-round" type="text" />
+                            </div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="w3-row-padding">
+                            <div class="w3-col">
+                                <label>Senha</label>
+                                <input id="txtPassword" class="w3-input w3-border w3-round" type="password" />
+                            </div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="w3-row-padding">
+                            <div class="w3-col">
+                                <div class="w3-row">
+                                    <div class="w3-col s6 m6 l6">
+                                        <label>Lembrar</label>
+                                        <input id="chkRemember" class="w3-check" type="checkbox" />
+                                    </div>
+                                    <div class="w3-col s6 m6 l6">
+                                        <a id="aIForgotMyPassword" class="w3-right" href="#" style="margin: 8px;text-decoration:none;">Esqueci minha senha</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="w3-row-padding">
+                            <div class="w3-col">
+                                <input id="btnLogin" class="w3-btn w3-block w3-indigo w3-round" type="button" value="Login" />
+                            </div>
+                        </div>
+                    </p>
+                    <p>
+                        <div class="w3-row-padding">
+                            <div class="w3-col s12 m12 l12">
+                                <div id="dialogContainer"></div>
+                            </div>
+                        </div>
+                    </p>
+
+
+                    <div class="w3-row-padding">
+                        <div class="w3-col">
+                            <div id="modalForm" class="w3-modal">
+                                <div class="w3-modal-content w3-animate-top w3-card-4">
+
+                                    <h2 class="w3-container w3-indigo">
+                                        Definição de nova senha
+                                    </h2>
+
+                                    <div class="w3-container">
+
+                                        <div id="divCheckSecretPhrase">
+                                            <p>
+                                                <div class="w3-row">
+                                                    <div class="w3-col">
+                                                        Para definir uma nova senha, você deve informar ao sistema a sua frase secreta.
+                                                    </div>
+                                                </div>
+                                            </p>
+                                            <p>
+                                                <div class="w3-row">
+                                                    <div class="w3-col">
+                                                        <label>Informe a sua frase secreta</label>
+                                                        <input id="txtSecretPhrase" class="w3-input w3-border w3-round" type="text" />
+                                                    </div>
+                                                </div>
+                                            </p>
+                                            <p>
+                                                <div class="w3-row">
+                                                    <div class="w3-col">
+                                                        <button id="btnCheckSecretPhrase" class="w3-button w3-round w3-indigo" type="button">Verificar</button>
+                                                    </div>
+                                                </div>
+                                            </p>
+                                        </div>
+                                        <div id="divChangePassword" class="w3-hide">
+                                            <p>
+                                                <div class="w3-row">
+                                                    <div class="w3-col">
+                                                        Agora você deve definir uma nova senha para o seu usuário <strong id="strUserName"></strong>
+                                                    </div>
+                                                </div>
+                                            </p>
+                                            <p>
+                                                <div class="w3-row">
+                                                    <div class="w3-col s12 m6 l4">
+                                                        <label>Informe a nova senha</label>
+                                                        <input id="txtNewPassword" class="w3-input w3-border w3-round" type="password" />
+                                                    </div>
+                                                </div>
+                                            </p>
+                                            <p>
+                                                <div class="w3-row">
+                                                    <div class="w3-col s12 m6 l4">
+                                                        <label>Confirme a nova senha</label>
+                                                        <input id="txtConfirmNewPassword" class="w3-input w3-border w3-round" type="password" />
+                                                    </div>
+                                                </div>
+                                            </p>
+                                            <p>
+                                                <div class="w3-row">
+                                                    <div class="w3-col">
+                                                        <button id="btnUpdatePassword" class="w3-button w3-round w3-indigo" type="button">Atualizar senha</button>
+                                                    </div>
+                                                </div>
+                                            </p>
+                                        </div>
+                                        <p>
+                                            <div id="dialogContainerModal"></div>
+                                        </p>
+                                    </div>
+
+                                    <footer class="w3-container" style="background-color:silver;">
+                                        <p style="text-align:right;">
+                                            <button id="btnCloseModal" class="w3-button w3-round w3-red" type="button">Cancelar</button>
+                                        </p>
+                                    </footer>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        <div class="w3-row-padding w3-center w3-padding-16">
+                            <div class="w3-col s12 m12 l12">
+                                <div class="loading w3-hide">
+                                    <div class="w3-text-indigo">
+                                        <h3>Aguarde ...</h3>
+                                        <i class="fa fa-spinner fa-4x w3-spin"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

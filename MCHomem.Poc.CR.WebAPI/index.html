@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Welcome to WebAPI 2.0</title>
+        <script type="text/javascript">
+
+            document.addEventListener('DOMContentLoaded', function () {
+
+                Index = {
+
+                    self: this
+                    , init: function () {
+                        self.$btnCustomers = document.getElementById('btnCustomers');
+                        self.$btnUsers = document.getElementById('btnUsers');
+                        self.$txtUserName = document.getElementById('txtUserName');
+                        self.$txtPassword = document.getElementById('txtPassword');
+                        self.$btnLogin = document.getElementById('btnLogin');
+                        self.$btnMenus = document.getElementById('btnMenus');
+                        self.$rbtAll = document.getElementById('rbtAll');
+                        self.$rbtOrdenated = document.getElementById('rbtOrdenated');
+                        self.$rbtActives = document.getElementById('rbtActives');
+                        self.$rbtDeactives = document.getElementById('rbtDeactives');
+                        this.attachEvent();
+                    }
+
+                    , attachEvent: function () {
+                        self.$btnCustomers.addEventListener('click', function () {
+                            Index.callService('customers');
+                        });
+                        self.$btnUsers.addEventListener('click', function () {
+                            Index.callService('users');
+                        });
+                        self.$btnLogin.addEventListener('click', function () {
+                            Index.callService('users/GetUserLogin?name=' + self.$txtUserName.value + '&password=' + self.$txtPassword.value);
+                        });
+                        self.$btnMenus.addEventListener('click', function () {
+                            var filter;
+                            if (self.$rbtAll.checked) {
+                                filter = 'menus';
+                            } else if (self.$rbtOrdenated.checked) {
+                                filter = 'menus?filter=ordenated';
+                            } else if (self.$rbtActives.checked) {
+                                filter = 'menus?filter=actives';
+                            } else {
+                                filter = 'menus?filter=deactives';
+                            }
+                            Index.callService(filter);
+                        });
+                    }
+
+                    , callService: function (path) {
+                        window.location.href = window.location.origin + '/api/' + path;
+                    }
+
+                }
+
+                Index.init();
+            });
+
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to WebAPI 2.0</h1>
+        <Label>Select a service below to test</Label>
+        <ul>
+            <li>
+                <button id="btnCustomers" type="button">Customers</button>
+            </li>
+            <li>
+                <button id="btnUsers" type="button">Users</button>
+            </li>
+            <li>
+                User login:
+                <input id="txtUserName" type="text" placeholder="user name" />
+                <input id="txtPassword" type="text" placeholder="password" />
+                <input id="btnLogin" type="button" value="Test Login" />
+            </li>
+            <li>
+                <button id="btnMenus" type="button">Menus</button>
+                <ul>
+                    <li>
+                        <input id="rbtAll" name="menu-filter" type="radio" checked />
+                        <label>All</label>
+                    </li>
+                    <li>
+                        <input id="rbtOrdenated" name="menu-filter" type="radio" />
+                        <label>Ordenated</label>
+                    </li>
+                    <li>
+                        <input id="rbtActives" name="menu-filter" type="radio" />
+                        <label>Actives</label>
+                    </li>
+                    <li>
+                        <input id="rbtDeactives" name="menu-filter" type="radio" />
+                        <label>Deactives</label>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,130 @@
+﻿<div class="w3-panel">
+    <div class="w3-card-4">
+        <div class="w3-container w3-indigo">
+            <h2><i class="fas fa-ellipsis-v"></i> Menu</h2>
+        </div>
+        <div class="loading">
+            <div class="w3-text-indigo">
+                <i class="fa fa-spinner fa-4x w3-spin"></i>
+            </div>
+        </div>
+        <form id="frmMenuMaintenance" class="w3-container w3-hide">
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col m4 l2">
+                        <label>Rótulo</label>
+                        <input id="txtLabel" class="w3-input w3-border w3-round" type="text" maxlength="20">
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col m4 l2">
+                        <input id="chkIsParentMenu" class="w3-check" type="checkbox">
+                        <label>Menu é pai.</label>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col m8 l4">
+                        <label>Página</label>
+                        <input id="txtPage" class="w3-input w3-border w3-round" type="text" maxlength="50">
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col m4 l2">
+                        <label>Menu pai</label>
+                        <select id="selParentMenu" class="w3-input w3-border w3-round"></select>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m8 l6">
+                        <label>Tipo de ícone:</label>
+                        <input id="rdbFile" class="w3-radio" name="chooseIconeType" type="radio" />
+                        <label>Arquivo</label>
+                        <input id="rdbCssFa" class="w3-radio" name="chooseIconeType" type="radio" />
+                        <label>Css Font Awesome</label>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div id="rowFieldIcon" class="w3-row-padding">
+                    <div class="w3-col m8 l4">
+                        <label>Ícone</label>
+                        <div class="w3-row">
+                            <div class="w3-col s9 m10 l10">
+                                <input id="fupIcon" class="w3-input w3-border w3-round" type="file" />
+                            </div>
+                            <div class="w3-col s3 m2 l2 w3-center">
+                                <img id="imgImageIcon" class="w3-border w3-round" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div id="rowFieldCssFontAwesome" class="w3-row-padding">
+                    <div class="w3-col s12 m6 l3">
+                        <label>Ícone Font Awesome 5.2</label>
+                        <div class="w3-row">
+                            <div class="w3-col s9 m10 l10">
+                                <input id="txtCssFontAwesome" class="w3-input w3-border w3-round" type="text" maxlength="30" placeholder="Ex: fas fa-play">
+                            </div>
+                            <div class="w3-col s3 m2 l2 w3-center">
+                                <i id="iCssFontAwesomeSample" style="font-size:40px"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m4 l2">
+                        <input id="chkActive" class="w3-check" type="checkbox">
+                        <label>Ativo</label>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m4 l2">
+                        <input id="chkVisible" class="w3-check" type="checkbox">
+                        <label>Visível</label>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s6 m2 l1">
+                        <label>Ordem</label>
+                        <input id="txtOrder" class="w3-input w3-border w3-round" type="text" maxlength="2" placeholder="0">
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s6 m2 l1">
+                        <input id="btnSave" class="w3-btn w3-block w3-indigo w3-round" type="button" value="Salvar" />
+                    </div>
+                    <div class="w3-col s6 m2 l1">
+                        <input id="btnCancel" class="w3-btn w3-block w3-border w3-border-indigo w3-round" type="button" value="Cancelar" />
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m12 l12">
+                        <div id="dialogContainer"></div>
+                    </div>
+                </div>
+            </p>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">MenuMaintenance.init();</script>
