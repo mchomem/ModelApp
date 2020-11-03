@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MCHomem.Poc.CR.EF.Models;
+using MCHomem.Poc.CR.Utils;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -7,12 +9,9 @@ using System.Data.Entity.Infrastructure;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
-using MCHomem.Poc.CR.EF.Models;
-using MCHomem.Poc.CR.Utils;
 
 namespace MCHomem.Poc.CR.WebAPI.Controllers
 {
