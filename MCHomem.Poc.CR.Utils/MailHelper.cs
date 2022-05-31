@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Mail;
 
-namespace MCHomem.Poc.CR.Utils
+namespace ModelApp.Utils
 {
     public class MailHelper
     {

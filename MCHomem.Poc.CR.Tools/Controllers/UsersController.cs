@@ -1,8 +1,8 @@
-﻿using MCHomem.Poc.CR.EF.Models;
+﻿using ModelApp.EF.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MCHomem.Poc.CR.Tools.Controllers
+namespace ModelApp.Tools.Controllers
 {
     public class UsersController
     {

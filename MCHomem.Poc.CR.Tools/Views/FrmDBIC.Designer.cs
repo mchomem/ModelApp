@@ -1,4 +1,4 @@
-﻿namespace MCHomem.Poc.CR.Tools.Views
+﻿namespace ModelApp.Tools.Views
 {
     partial class FrmDBIC
     {

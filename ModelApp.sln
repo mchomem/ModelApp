@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCHomem.Poc.CR.WebAPI", "MCHomem.Poc.CR.WebAPI\MCHomem.Poc.CR.WebAPI.csproj", "{14CCE4C8-A327-4BBF-9842-B6F65043DEE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.Api", "MCHomem.Poc.CR.WebAPI\ModelApp.Api.csproj", "{14CCE4C8-A327-4BBF-9842-B6F65043DEE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCHomem.Poc.CR.EF", "MCHomem.Poc.CR.EF\MCHomem.Poc.CR.EF.csproj", "{2808C4AA-5A0F-4C4D-8118-E05572424147}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.EF", "MCHomem.Poc.CR.EF\ModelApp.EF.csproj", "{2808C4AA-5A0F-4C4D-8118-E05572424147}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCHomem.Poc.CR.WebApp", "MCHomem.Poc.CR.WebApp\MCHomem.Poc.CR.WebApp.csproj", "{2994FB90-8151-4C64-96F5-54E6C6569231}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.Site", "MCHomem.Poc.CR.WebApp\ModelApp.Site.csproj", "{2994FB90-8151-4C64-96F5-54E6C6569231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCHomem.Poc.CR.Utils", "MCHomem.Poc.CR.Utils\MCHomem.Poc.CR.Utils.csproj", "{D7CE7636-286A-40FF-8587-0444AB79ED75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.Utils", "MCHomem.Poc.CR.Utils\ModelApp.Utils.csproj", "{D7CE7636-286A-40FF-8587-0444AB79ED75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCHomem.Poc.CR.Tools", "MCHomem.Poc.CR.Tools\MCHomem.Poc.CR.Tools.csproj", "{AAABAA9C-20FB-40C2-A34C-2277D40EAA25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.Tools", "MCHomem.Poc.CR.Tools\ModelApp.Tools.csproj", "{AAABAA9C-20FB-40C2-A34C-2277D40EAA25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

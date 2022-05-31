@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace MCHomem.Poc.CR.EF.Models
+namespace ModelApp.EF.Models
 {
     public abstract class DataControl
     {

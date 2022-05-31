@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ModelApp.Tools.Views;
+using System;
 using System.Windows.Forms;
-using MCHomem.Poc.CR.Tools.Views;
 
-namespace MCHomem.Poc.CR.Tools
+namespace ModelApp.Tools
 {
     static class Program
     {

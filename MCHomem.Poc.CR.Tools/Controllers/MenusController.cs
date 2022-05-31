@@ -1,9 +1,9 @@
-﻿using MCHomem.Poc.CR.EF.Models;
+﻿using ModelApp.EF.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace MCHomem.Poc.CR.Tools.Controllers
+namespace ModelApp.Tools.Controllers
 {
     public class MenusController
     {
@@ -66,7 +66,7 @@ namespace MCHomem.Poc.CR.Tools.Controllers
             }
         }
 
-        public EF.Models.Menu GetDetail(EF.Models.Menu menu)
+        public Menu GetDetail(Menu menu)
         {
             using (CRContext db = new CRContext())
             {

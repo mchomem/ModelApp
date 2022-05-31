@@ -1,5 +1,5 @@
-﻿using MCHomem.Poc.CR.EF.Models;
-using MCHomem.Poc.CR.Utils;
+﻿using ModelApp.Utils;
+using ModelApp.EF.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,7 +13,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 
-namespace MCHomem.Poc.CR.WebAPI.Controllers
+namespace ModelApp.Api.Controllers
 {
     public class UsersController : ApiController
     {
@@ -52,7 +52,7 @@ namespace MCHomem.Poc.CR.WebAPI.Controllers
         [ResponseType(typeof(User))]
         public IHttpActionResult GetUserSecretPhrase(String name, String secretPhrase)
         {
-            if(secretPhrase == null)
+            if (secretPhrase == null)
             {
                 return NotFound();
             }
@@ -163,7 +163,7 @@ namespace MCHomem.Poc.CR.WebAPI.Controllers
 
             String newPassword = new PasswordGenerator().WithAlphaValue(user.Name);
             user.Password = new Cypher().Encrypt(newPassword);
-            
+
             String pathTemplate = HttpContext.Current.Server.MapPath("/Templates/Email/email-reset-password.html");
             String body = String.Empty;
 
@@ -185,7 +185,7 @@ namespace MCHomem.Poc.CR.WebAPI.Controllers
 
             List<String> emails = new List<String>();
             emails.Add(user.Email);
-            
+
             new MailHelper()
                 .Send(
                     smtpHost

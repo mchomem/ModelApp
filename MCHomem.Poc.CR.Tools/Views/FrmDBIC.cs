@@ -1,18 +1,13 @@
-﻿using MCHomem.Poc.CR.EF.Models;
-using MCHomem.Poc.CR.Tools.Controllers;
-using MCHomem.Poc.CR.Utils;
+﻿using ModelApp.Tools.Controllers;
+using ModelApp.Utils;
+using ModelApp.EF.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Menu = MCHomem.Poc.CR.EF.Models.Menu;
+using Menu = ModelApp.EF.Models.Menu;
 
-namespace MCHomem.Poc.CR.Tools.Views
+namespace ModelApp.Tools.Views
 {
     public partial class FrmDBIC : Form
     {
@@ -61,7 +56,7 @@ namespace MCHomem.Poc.CR.Tools.Views
 
                 List<UserRole> userRoles = userRolesController.Select(new UserRole() { Name = "Administrador" });
 
-                if(userRoles.Count > 0)
+                if (userRoles.Count > 0)
                 {
                     this.dgvResult.Rows.Add("UserRole Select", "Already exists");
                     return;
@@ -94,9 +89,9 @@ namespace MCHomem.Poc.CR.Tools.Views
                 user.CreatedBy = "System";
                 user.CreatedIn = DateTime.Now;
 
-                List<User> users = userController.Select(new User() { Name = "admin"});
+                List<User> users = userController.Select(new User() { Name = "admin" });
 
-                if(users.Count > 0)
+                if (users.Count > 0)
                 {
                     this.dgvResult.Rows.Add("User Select", "Already exists");
                     return;
@@ -119,29 +114,29 @@ namespace MCHomem.Poc.CR.Tools.Views
             this.InsertMenu("Administração", "#", "fas fa-cogs", 2);
             this.InsertMenu("Cadastros", "#", "fas fa-book", 3);
 
-            EF.Models.Menu parentMenuAdmin = new MenusController().Select(new EF.Models.Menu() { Label = "Administração" })[0];
+            Menu parentMenuAdmin = new MenusController().Select(new Menu() { Label = "Administração" })[0];
             this.InsertMenu("Papel de usuário", "userrole-listing.html", "fas fa-user-tie", 1, parentMenuAdmin);
             this.InsertMenu("Usuário", "user-listing.html", "fas fa-user", 2, parentMenuAdmin);
             this.InsertMenu("Menu", "menu-listing.html", "fas fa-ellipsis-v", 3, parentMenuAdmin);
 
-            EF.Models.Menu parentMenuCadastre = new MenusController().Select(new EF.Models.Menu() { Label = "Cadastros" })[0];
+            Menu parentMenuCadastre = new MenusController().Select(new Menu() { Label = "Cadastros" })[0];
             this.InsertMenu("Cliente", "customer-listing.html", "fas fa-users", 2, parentMenuCadastre);
         }
 
-        private void InsertMenu(String label, String page, String cssfa, int order, EF.Models.Menu parentMenu = null)
+        private void InsertMenu(String label, String page, String cssfa, int order, Menu parentMenu = null)
         {
             try
             {
                 MenusController menuController = new MenusController();
 
-                if (menuController.Select(new EF.Models.Menu() { Label = label }).Count > 0)
+                if (menuController.Select(new Menu() { Label = label }).Count > 0)
                 {
                     this.dgvResult.Rows.Add("Menu Select", "Already exists");
                 }
                 else
                 {
                     this.dgvResult.Rows.Add("Menu Select", "No exists");
-                    EF.Models.Menu menu = new Menu();
+                    Menu menu = new Menu();
                     menu.Label = label;
                     menu.Page = page;
                     menu.ParentMenu = parentMenu;

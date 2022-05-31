@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace MCHomem.Poc.CR.Utils
+namespace ModelApp.Utils
 {
     public class Cypher
     {

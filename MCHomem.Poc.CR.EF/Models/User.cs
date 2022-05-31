@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace MCHomem.Poc.CR.EF.Models
+namespace ModelApp.EF.Models
 {
-    public class User: DataControl
+    public class User : DataControl
     {
         [Key]
         public Int32 UserID { get; set; }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace MCHomem.Poc.CR.EF.Models
+namespace ModelApp.EF.Models
 {
-    public class UserRole: DataControl
+    public class UserRole : DataControl
     {
         [Key]
         public Int32 UserRoleID { get; set; }

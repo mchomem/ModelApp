@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace MCHomem.Poc.CR.EF.Models
+namespace ModelApp.EF.Models
 {
     public class CRContext : DbContext
     {

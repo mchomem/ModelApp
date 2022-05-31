@@ -1,4 +1,4 @@
-﻿using MCHomem.Poc.CR.EF.Models;
+﻿using ModelApp.EF.Models;
 using System;
 using System.Data;
 using System.Data.Entity;
@@ -8,7 +8,7 @@ using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
 
-namespace MCHomem.Poc.CR.WebAPI.Controllers
+namespace ModelApp.Api.Controllers
 {
     public class MenusController : ApiController
     {

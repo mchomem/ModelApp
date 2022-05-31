@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MCHomem.Poc.CR.Utils
+namespace ModelApp.Utils
 {
     public class PasswordGenerator
     {
