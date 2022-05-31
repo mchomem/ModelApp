@@ -7,10 +7,10 @@ namespace ModelApp.EF.Models
     {
         [Required]
         [MaxLength(20)]
-        public String CreatedBy { get; set; }
+        public string CreatedBy { get; set; }
         [Required]
         public DateTime CreatedIn { get; set; }
-        public String UpdatedBy { get; set; }
+        public string UpdatedBy { get; set; }
         public DateTime? UpdatedIn { get; set; }
     }
 }

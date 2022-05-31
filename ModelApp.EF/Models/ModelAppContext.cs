@@ -3,9 +3,9 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace ModelApp.EF.Models
 {
-    public class CRContext : DbContext
+    public class ModelAppContext : DbContext
     {
-        public CRContext() : base("name=CRDataBase") { }
+        public ModelAppContext() : base("name=ModelApp") { }
 
         protected override void OnModelCreating(DbModelBuilder dbModelBuilder)
         {

@@ -11,7 +11,7 @@ namespace ModelApp.Api.Controllers
 {
     public class UserRolesController : ApiController
     {
-        private CRContext db = new CRContext();
+        private ModelAppContext db = new ModelAppContext();
 
         // GET: api/UserRoles
         public IQueryable<UserRole> GetUserRoles()

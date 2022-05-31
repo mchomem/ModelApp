@@ -1,16 +1,15 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ModelApp.EF.Models
 {
     public class UserRole : DataControl
     {
         [Key]
-        public Int32 UserRoleID { get; set; }
+        public int UserRoleID { get; set; }
         [MaxLength(100)]
         [Required]
-        public String Name { get; set; }
+        public string Name { get; set; }
         [MaxLength(1000)]
-        public String Description { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace ModelApp.Tools.Views
         {
             try
             {
-                if (String.IsNullOrEmpty(this.txtValue.Text))
+                if (string.IsNullOrEmpty(this.txtValue.Text))
                 {
                     MessageBox.Show(this, "Informe um valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -29,7 +29,7 @@ namespace ModelApp.Tools.Views
             {
                 MessageBox.Show(
                     this
-                    , String.Format("Falha ao encriptar o valor.\n\nMensagem: {0}\n{1}", e.Message, e.StackTrace)
+                    , string.Format("Falha ao encriptar o valor.\n\nMensagem: {0}\n{1}", e.Message, e.StackTrace)
                     , "Falha"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Error);
@@ -40,7 +40,7 @@ namespace ModelApp.Tools.Views
         {
             try
             {
-                if (String.IsNullOrEmpty(this.txtValue.Text))
+                if (string.IsNullOrEmpty(this.txtValue.Text))
                 {
                     MessageBox.Show(this, "Informe um valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -53,7 +53,7 @@ namespace ModelApp.Tools.Views
             {
                 MessageBox.Show(
                     this
-                    , String.Format("Falha ao encriptar o valor.\n\nMensagem: {0}\n{1}", e.Message, e.StackTrace)
+                    , string.Format("Falha ao encriptar o valor.\n\nMensagem: {0}\n{1}", e.Message, e.StackTrace)
                     , "Falha"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Error);

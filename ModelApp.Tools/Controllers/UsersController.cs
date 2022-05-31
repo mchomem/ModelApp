@@ -8,7 +8,7 @@ namespace ModelApp.Tools.Controllers
     {
         public void Insert(User user)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 db.Users.Add(user);
                 db.UserRoles.Attach(user.UserRole);
@@ -19,7 +19,7 @@ namespace ModelApp.Tools.Controllers
 
         public void Update(User user)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 db.UserRoles.Attach(user.UserRole);
                 user.UserRoleID = user.UserRole.UserRoleID;
@@ -31,7 +31,7 @@ namespace ModelApp.Tools.Controllers
 
         public void Delete(User user)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 db.Users.Attach(user);
                 db.Users.Remove(user);
@@ -41,7 +41,7 @@ namespace ModelApp.Tools.Controllers
 
         public List<User> Select(User user = null)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 if (user == null)
                     return db.Users.Include("UserRole").ToList();
@@ -55,7 +55,7 @@ namespace ModelApp.Tools.Controllers
 
         public User GetDetail(User user)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 return db.Users.Include("UserRole")
                     .Where(u => u.UserID.Equals(user.UserID)

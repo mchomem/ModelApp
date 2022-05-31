@@ -11,7 +11,7 @@ namespace ModelApp.Api.Controllers
 {
     public class CustomersController : ApiController
     {
-        private CRContext db = new CRContext();
+        private ModelAppContext db = new ModelAppContext();
 
         // GET: api/Customers
         public IQueryable<Customer> GetCustomers()

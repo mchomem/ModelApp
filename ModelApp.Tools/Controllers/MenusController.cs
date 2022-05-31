@@ -9,7 +9,7 @@ namespace ModelApp.Tools.Controllers
     {
         public void Insert(Menu menu)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 db.Menus.Add(menu);
                 Menu parentMenu = (menu.ParentMenu != null ? menu.ParentMenu : null);
@@ -24,7 +24,7 @@ namespace ModelApp.Tools.Controllers
 
         public void Update(Menu menu)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 Menu parentMenu = (menu.ParentMenu != null ? menu.ParentMenu : null);
                 if (parentMenu != null)
@@ -40,7 +40,7 @@ namespace ModelApp.Tools.Controllers
 
         public void Delete(Menu menu)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 db.Menus.Attach(menu);
                 db.Menus.Remove(menu);
@@ -51,7 +51,7 @@ namespace ModelApp.Tools.Controllers
 
         public List<Menu> Select(Menu menu = null)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 if (menu == null)
                     return db.Menus
@@ -68,7 +68,7 @@ namespace ModelApp.Tools.Controllers
 
         public Menu GetDetail(Menu menu)
         {
-            using (CRContext db = new CRContext())
+            using (ModelAppContext db = new ModelAppContext())
             {
                 return db.Menus
                     .Include("ParentMenu")

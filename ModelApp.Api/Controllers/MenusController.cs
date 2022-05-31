@@ -12,7 +12,7 @@ namespace ModelApp.Api.Controllers
 {
     public class MenusController : ApiController
     {
-        private CRContext db = new CRContext();
+        private ModelAppContext db = new ModelAppContext();
 
         // GET: api/Menus
         public IQueryable<Menu> GetMenus(String filter = null)

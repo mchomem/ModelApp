@@ -17,7 +17,7 @@ namespace ModelApp.Api.Controllers
 {
     public class UsersController : ApiController
     {
-        private CRContext db = new CRContext();
+        private ModelAppContext db = new ModelAppContext();
 
         // GET: api/Users
         public IQueryable<User> GetUsers()

@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\CRContext.cs" />
+    <Compile Include="Models\ModelAppContext.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DataControl.cs" />
     <Compile Include="Models\Menu.cs" />
