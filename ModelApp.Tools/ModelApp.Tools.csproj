@@ -111,11 +111,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MCHomem.Poc.CR.EF\ModelApp.EF.csproj">
+    <ProjectReference Include="..\ModelApp.EF\ModelApp.EF.csproj">
       <Project>{2808c4aa-5a0f-4c4d-8118-e05572424147}</Project>
       <Name>ModelApp.EF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MCHomem.Poc.CR.Utils\ModelApp.Utils.csproj">
+    <ProjectReference Include="..\ModelApp.Utils\ModelApp.Utils.csproj">
       <Project>{d7ce7636-286a-40ff-8587-0444ab79ed75}</Project>
       <Name>ModelApp.Utils</Name>
     </ProjectReference>
