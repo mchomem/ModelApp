@@ -17,14 +17,14 @@ namespace ModelApp.Tools.Views
         {
             try
             {
-                if (string.IsNullOrEmpty(this.txtValue.Text))
+                if (string.IsNullOrEmpty(this.textValue.Text))
                 {
                     MessageBox.Show(this, "Informe um valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 Cypher cypher = new Cypher();
-                this.txtValue.Text = cypher.Encrypt(this.txtValue.Text);
+                this.textValue.Text = cypher.Encrypt(this.textValue.Text);
             }
             catch (Exception e)
             {
@@ -41,14 +41,14 @@ namespace ModelApp.Tools.Views
         {
             try
             {
-                if (string.IsNullOrEmpty(this.txtValue.Text))
+                if (string.IsNullOrEmpty(this.textValue.Text))
                 {
                     MessageBox.Show(this, "Informe um valor.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 Cypher cypher = new Cypher();
-                this.txtValue.Text = cypher.Decrypt(this.txtValue.Text);
+                this.textValue.Text = cypher.Decrypt(this.textValue.Text);
             }
             catch (Exception e)
             {
@@ -65,12 +65,12 @@ namespace ModelApp.Tools.Views
 
         #region Events
 
-        private void btnEncrypt_Click(object sender, EventArgs e)
+        private void buttonEncrypt_Click(object sender, EventArgs e)
         {
             this.Encrypt();
         }
 
-        private void btnDecrypt_Click(object sender, EventArgs e)
+        private void buttonDecrypt_Click(object sender, EventArgs e)
         {
             this.Decrypt();
         }

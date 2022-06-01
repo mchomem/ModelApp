@@ -22,18 +22,18 @@ namespace ModelApp.Tools.Views
 
         #region Envents
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e)
         {
             this.backgroundWorker.RunWorkerAsync();
         }
 
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.btnStart.Enabled = false;
+            this.buttonStart.Enabled = false;
             this.InsertUserRole();
             this.InsertUser();
             this.InsertMenu();
-            this.btnStart.Enabled = true;
+            this.buttonStart.Enabled = true;
 
             MessageBox.Show(this, "Done", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
