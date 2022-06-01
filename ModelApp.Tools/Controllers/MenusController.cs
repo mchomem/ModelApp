@@ -48,7 +48,6 @@ namespace ModelApp.Tools.Controllers
             }
         }
 
-
         public List<Menu> Select(Menu menu = null)
         {
             using (ModelAppContext db = new ModelAppContext())
