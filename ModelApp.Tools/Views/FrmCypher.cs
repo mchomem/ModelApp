@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelApp.Utils;
+using System;
 using System.Windows.Forms;
 
 namespace ModelApp.Tools.Views
@@ -22,7 +23,7 @@ namespace ModelApp.Tools.Views
                     return;
                 }
 
-                Utils.Cypher cypher = new Utils.Cypher();
+                Cypher cypher = new Cypher();
                 this.txtValue.Text = cypher.Encrypt(this.txtValue.Text);
             }
             catch (Exception e)
@@ -46,7 +47,7 @@ namespace ModelApp.Tools.Views
                     return;
                 }
 
-                Utils.Cypher cypher = new Utils.Cypher();
+                Cypher cypher = new Cypher();
                 this.txtValue.Text = cypher.Decrypt(this.txtValue.Text);
             }
             catch (Exception e)

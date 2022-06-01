@@ -68,7 +68,7 @@ namespace ModelApp.Tools.Views
             }
             catch (Exception e)
             {
-                this.dgvResult.Rows.Add("UserRole Insert", String.Format("Error\nMessage {0} \n StackTrace {1}", e.Message, e.StackTrace));
+                this.dgvResult.Rows.Add("UserRole Insert", string.Format("Error\nMessage {0} \n StackTrace {1}", e.Message, e.StackTrace));
             }
         }
 
@@ -103,7 +103,7 @@ namespace ModelApp.Tools.Views
             }
             catch (Exception e)
             {
-                this.dgvResult.Rows.Add("User Insert", String.Format("Error\nMessage {0} \n StackTrace {1}", e.Message, e.StackTrace));
+                this.dgvResult.Rows.Add("User Insert", string.Format("Error\nMessage {0} \n StackTrace {1}", e.Message, e.StackTrace));
             }
         }
 
@@ -123,7 +123,7 @@ namespace ModelApp.Tools.Views
             this.InsertMenu("Cliente", "customer-listing.html", "fas fa-users", 2, parentMenuCadastre);
         }
 
-        private void InsertMenu(String label, String page, String cssfa, int order, Menu parentMenu = null)
+        private void InsertMenu(string label, string page, string cssfa, int order, Menu parentMenu = null)
         {
             try
             {
@@ -152,7 +152,7 @@ namespace ModelApp.Tools.Views
             }
             catch (Exception e)
             {
-                this.dgvResult.Rows.Add("Menu Insert", String.Format("Error\nMessage {0} \n StackTrace {1}", e.Message, e.StackTrace));
+                this.dgvResult.Rows.Add("Menu Insert", string.Format("Error\nMessage {0} \n StackTrace {1}", e.Message, e.StackTrace));
             }
         }
 

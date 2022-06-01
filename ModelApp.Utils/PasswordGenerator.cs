@@ -4,10 +4,10 @@ namespace ModelApp.Utils
 {
     public class PasswordGenerator
     {
-        public String WithAlphaValue(String value)
+        public string WithAlphaValue(string value)
         {
-            String newPassword =
-                String.Format
+            string newPassword =
+                string.Format
                 (
                     "{0}-{1}"
                     , value.Replace('a', '4').Replace('e', '3').Replace('i', '1').Replace('o', '0')
@@ -17,9 +17,9 @@ namespace ModelApp.Utils
             return newPassword;
         }
 
-        public String WithDateTime()
+        public string WithDateTime()
         {
-            String newPassword = String.Format("system@{0}", DateTime.Now.ToString("dd.MM.yyyy"));
+            string newPassword = string.Format("system@{0}", DateTime.Now.ToString("dd.MM.yyyy"));
 
             return newPassword;
         }

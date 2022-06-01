@@ -20,7 +20,7 @@ namespace ModelApp.Utils
 
         #region Methods
 
-        public String Encrypt(string plainText)
+        public string Encrypt(string plainText)
         {
             // Check arguments. 
             if (plainText == null || plainText.Length <= 0)
@@ -55,7 +55,7 @@ namespace ModelApp.Utils
             return Convert.ToBase64String(encrypted);
         }
 
-        public string Decrypt(String value)
+        public string Decrypt(string value)
         {
             byte[] cipherText = Convert.FromBase64String(value);
 

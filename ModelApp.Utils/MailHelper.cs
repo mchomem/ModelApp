@@ -18,16 +18,16 @@ namespace ModelApp.Utils
         /// <param name="body">Email body</param>
         /// <param name="enablesSSL">Optional, enables SSL</param>
         /// <param name="attachments">Optional, List of attachments</param>
-        public void Send(String smtpHost, Int32 smtpPort, String smtpUser, String smtpPass, String from, List<String> to, String subject, String body, Boolean enablesSSL = false, List<Attachment> attachments = null)
+        public void Send(string smtpHost, int smtpPort, string smtpUser, string smtpPass, string from, List<string> to, string subject, string body, bool enablesSSL = false, List<Attachment> attachments = null)
         {
             try
             {
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress(from);
 
-                foreach (String address in to)
+                foreach (string address in to)
                 {
-                    if (!String.IsNullOrEmpty(address))
+                    if (!string.IsNullOrEmpty(address))
                     {
                         mail.To.Add(address);
                     }
@@ -57,7 +57,7 @@ namespace ModelApp.Utils
             }
         }
 
-        private String FormatBreakLineEmail(String body)
+        private string FormatBreakLineEmail(string body)
         {
             body = body.Replace("\r\n", "<br>");
             return body;

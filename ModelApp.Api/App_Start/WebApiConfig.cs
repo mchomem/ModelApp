@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Web.Http;
 
-namespace MCHomem.Poc.CR.WebAPI
+namespace ModelApp.Api
 {
     public static class WebApiConfig
     {
