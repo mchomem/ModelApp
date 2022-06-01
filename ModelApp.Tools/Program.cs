@@ -14,7 +14,7 @@ namespace ModelApp.Tools
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCRTools());
+            Application.Run(new FormAppTools());
         }
     }
 }

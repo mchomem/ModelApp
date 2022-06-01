@@ -9,11 +9,11 @@ using Menu = ModelApp.EF.Models.Menu;
 
 namespace ModelApp.Tools.Views
 {
-    public partial class FrmDBIC : Form
+    public partial class FormDBIC : Form
     {
         #region Constructor
 
-        public FrmDBIC()
+        public FormDBIC()
         {
             InitializeComponent();
         }

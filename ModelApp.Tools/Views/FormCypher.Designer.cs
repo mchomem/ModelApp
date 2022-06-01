@@ -1,6 +1,6 @@
 ﻿namespace ModelApp.Tools.Views
 {
-    partial class FrmCypher
+    partial class FormCypher
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCypher));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCypher));
             this.lblValue = new System.Windows.Forms.Label();
             this.txtValue = new System.Windows.Forms.TextBox();
             this.btnEncrypt = new System.Windows.Forms.Button();
@@ -83,7 +83,7 @@
             this.btnDecrypt.UseVisualStyleBackColor = false;
             this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
-            // FrmCypher
+            // FormCypher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -94,7 +94,8 @@
             this.Controls.Add(this.lblValue);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmCypher";
+            this.Name = "FormCypher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cypher";
             this.ResumeLayout(false);
             this.PerformLayout();

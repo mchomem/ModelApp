@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace ModelApp.Tools.Views
 {
-    public partial class FrmCypher : Form
+    public partial class FormCypher : Form
     {
         #region Methods
 
-        public FrmCypher()
+        public FormCypher()
         {
             InitializeComponent();
         }
