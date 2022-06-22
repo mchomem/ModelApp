@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Web.Http;
 
-namespace ModelApp.Api
+namespace ModelApp.WebApi
 {
     public static class WebApiConfig
     {

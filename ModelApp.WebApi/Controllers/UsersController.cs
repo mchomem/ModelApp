@@ -1,5 +1,5 @@
-﻿using ModelApp.Utils;
-using ModelApp.EF.Models;
+﻿using ModelApp.EF.Models;
+using ModelApp.Utils;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,7 +13,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Description;
 
-namespace ModelApp.Api.Controllers
+namespace ModelApp.WebApi.Controllers
 {
     public class UsersController : ApiController
     {

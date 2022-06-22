@@ -1,0 +1,98 @@
+﻿using ModelApp.Service.Helpers.Interfaces;
+using System.Security.Cryptography;
+
+namespace ModelApp.Service.Helpers
+{
+    public class CypherHelper : ICypherHelper
+    {
+        #region Fields
+
+        private byte[] IV = new byte[] { 140, 200, 120, 30, 238, 225, 81, 29, 58, 93, 200, 0, 138, 126, 113, 21 };
+
+        private byte[] key = new byte[] { 201,  78, 108, 157, 80, 32,  13, 111, 41, 81,
+                                          184, 155, 185, 238, 46, 104, 57,  11, 25, 44,
+                                          112, 151,  54, 157, 97, 219, 84, 148, 47, 73,
+                                          81,  202 };
+
+        #endregion
+
+        #region Methods
+
+        public string Decrypt(string value)
+        {
+            byte[] cipherText = Convert.FromBase64String(value);
+
+            // Check arguments. 
+            if (cipherText == null || cipherText.Length <= 0)
+                throw new ArgumentNullException("cipherText");
+
+            // Declare the string used to hold 
+            // the decrypted text. 
+            string? plaintext = null;
+
+            // Create an RijndaelManaged object 
+            // with the specified key and IV. 
+            using (RijndaelManaged rijAlg = new())
+            {
+                rijAlg.Key = key;
+                rijAlg.IV = IV;
+
+                // Create a decrytor to perform the stream transform.
+                ICryptoTransform decryptor = rijAlg.CreateDecryptor(rijAlg.Key, rijAlg.IV);
+
+                // Create the streams used for decryption. 
+                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            // Read the decrypted bytes from the decrypting stream 
+                            // and place them in a string.
+                            plaintext = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
+
+            return plaintext;
+        }
+
+        public string Encrypt(string plainText)
+        {
+            // Check arguments. 
+            if (plainText == null || plainText.Length <= 0)
+                throw new ArgumentNullException("plainText");
+
+            byte[] encrypted;
+            // Create an RijndaelManaged object 
+            // with the specified key and IV. 
+            using (RijndaelManaged rijAlg = new())
+            {
+                rijAlg.Key = key;
+                rijAlg.IV = IV;
+
+                // Create a decryptor to perform the stream transform.
+                ICryptoTransform encryptor = rijAlg.CreateEncryptor(rijAlg.Key, rijAlg.IV);
+
+                // Create the streams used for encryption. 
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            //Write all data to the stream.
+                            swEncrypt.Write(plainText);
+                        }
+                        encrypted = msEncrypt.ToArray();
+                    }
+                }
+            }
+
+            return Convert.ToBase64String(encrypted);
+        }
+
+        #endregion
+    }
+}

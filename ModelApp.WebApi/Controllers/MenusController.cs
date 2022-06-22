@@ -8,7 +8,7 @@ using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
 
-namespace ModelApp.Api.Controllers
+namespace ModelApp.WebApi.Controllers
 {
     public class MenusController : ApiController
     {

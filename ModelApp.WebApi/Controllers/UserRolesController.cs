@@ -7,48 +7,48 @@ using System.Net;
 using System.Web.Http;
 using System.Web.Http.Description;
 
-namespace ModelApp.Api.Controllers
+namespace ModelApp.WebApi.Controllers
 {
-    public class CustomersController : ApiController
+    public class UserRolesController : ApiController
     {
         private ModelAppContext db = new ModelAppContext();
 
-        // GET: api/Customers
-        public IQueryable<Customer> GetCustomers()
+        // GET: api/UserRoles
+        public IQueryable<UserRole> GetUserRoles()
         {
-            return db.Customers
-                .OrderBy(c => c.Name)
+            return db.UserRoles
+                .OrderBy(ur => ur.Name)
                     .AsQueryable();
         }
 
-        // GET: api/Customers/5
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult GetCustomer(int id)
+        // GET: api/UserRoles/5
+        [ResponseType(typeof(UserRole))]
+        public IHttpActionResult GetUserRole(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            UserRole userRole = db.UserRoles.Find(id);
+            if (userRole == null)
             {
                 return NotFound();
             }
 
-            return Ok(customer);
+            return Ok(userRole);
         }
 
-        // PUT: api/Customers/5
+        // PUT: api/UserRoles/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutCustomer(int id, Customer customer)
+        public IHttpActionResult PutUserRole(int id, UserRole userRole)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != customer.CustomerID)
+            if (id != userRole.UserRoleID)
             {
                 return BadRequest();
             }
 
-            db.Entry(customer).State = EntityState.Modified;
+            db.Entry(userRole).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace ModelApp.Api.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CustomerExists(id))
+                if (!UserRoleExists(id))
                 {
                     return NotFound();
                 }
@@ -69,35 +69,35 @@ namespace ModelApp.Api.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Customers
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult PostCustomer(Customer customer)
+        // POST: api/UserRoles
+        [ResponseType(typeof(UserRole))]
+        public IHttpActionResult PostUserRole(UserRole userRole)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Customers.Add(customer);
+            db.UserRoles.Add(userRole);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = customer.CustomerID }, customer);
+            return CreatedAtRoute("DefaultApi", new { id = userRole.UserRoleID }, userRole);
         }
 
-        // DELETE: api/Customers/5
-        [ResponseType(typeof(Customer))]
-        public IHttpActionResult DeleteCustomer(int id)
+        // DELETE: api/UserRoles/5
+        [ResponseType(typeof(UserRole))]
+        public IHttpActionResult DeleteUserRole(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            UserRole userRole = db.UserRoles.Find(id);
+            if (userRole == null)
             {
                 return NotFound();
             }
 
-            db.Customers.Remove(customer);
+            db.UserRoles.Remove(userRole);
             db.SaveChanges();
 
-            return Ok(customer);
+            return Ok(userRole);
         }
 
         protected override void Dispose(bool disposing)
@@ -109,9 +109,9 @@ namespace ModelApp.Api.Controllers
             base.Dispose(disposing);
         }
 
-        private bool CustomerExists(int id)
+        private bool UserRoleExists(int id)
         {
-            return db.Customers.Count(e => e.CustomerID == id) > 0;
+            return db.UserRoles.Count(e => e.UserRoleID == id) > 0;
         }
     }
 }
