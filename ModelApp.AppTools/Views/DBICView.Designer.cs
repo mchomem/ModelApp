@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DBICView));
             this.buttonStart = new System.Windows.Forms.Button();
             this.dataGridViewResult = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
@@ -59,6 +60,7 @@
             this.ClientSize = new System.Drawing.Size(387, 358);
             this.Controls.Add(this.dataGridViewResult);
             this.Controls.Add(this.buttonStart);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DBICView";
             this.Text = "Data Base Initial Charge - DBIC";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
