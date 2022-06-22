@@ -1,4 +1,4 @@
-﻿namespace ModelApp.DBTools.Views
+﻿namespace ModelApp.AppTools.Views
 {
     partial class DBICView
     {

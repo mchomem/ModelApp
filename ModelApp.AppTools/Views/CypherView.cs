@@ -1,7 +1,7 @@
-﻿using ModelApp.DBTools.Shareds;
+﻿using ModelApp.AppTools.Shareds;
 using ModelApp.Service.Helpers.Interfaces;
 
-namespace ModelApp.DBTools.Views
+namespace ModelApp.AppTools.Views
 {
     public partial class CypherView : MdiChieldFormBase
     {

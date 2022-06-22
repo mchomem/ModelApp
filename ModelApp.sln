@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelApp.Service", "ModelAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelApp.Infra", "ModelApp.Infra\ModelApp.Infra.csproj", "{DF4763AF-C1A2-4B69-8B2A-62DCEDFDB317}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.DBTools", "ModelApp.DBTools\ModelApp.DBTools.csproj", "{7209F6D4-3ED9-486D-9A1D-93BDDD8027EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelApp.AppTools", "ModelApp.AppTools\ModelApp.AppTools.csproj", "{7209F6D4-3ED9-486D-9A1D-93BDDD8027EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

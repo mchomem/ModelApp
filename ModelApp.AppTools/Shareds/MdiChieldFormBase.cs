@@ -1,4 +1,4 @@
-﻿namespace ModelApp.DBTools.Shareds
+﻿namespace ModelApp.AppTools.Shareds
 {
     public class MdiChieldFormBase : Form
     {

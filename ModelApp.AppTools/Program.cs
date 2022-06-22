@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using ModelApp.DBTools.Views;
+using ModelApp.AppTools.Views;
 using ModelApp.Infra.Contexts;
 using ModelApp.Infra.Repositories;
 using ModelApp.Infra.Repositories.Interfaces;
@@ -8,7 +8,7 @@ using ModelApp.Service.Helpers.Interfaces;
 using ModelApp.Service.Services;
 using ModelApp.Service.Services.Interfaces;
 
-namespace ModelApp.DBTools
+namespace ModelApp.AppTools
 {
     internal static class Program
     {

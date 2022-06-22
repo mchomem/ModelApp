@@ -1,4 +1,4 @@
-﻿namespace ModelApp.DBTools.Views
+﻿namespace ModelApp.AppTools.Views
 {
     partial class CypherView
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CypherView));
             this.labelValue = new System.Windows.Forms.Label();
             this.textBoxValue = new System.Windows.Forms.TextBox();
             this.buttonEncrypt = new System.Windows.Forms.Button();
@@ -85,8 +86,9 @@
             this.Controls.Add(this.buttonEncrypt);
             this.Controls.Add(this.textBoxValue);
             this.Controls.Add(this.labelValue);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CypherView";
-            this.Text = "CypherView";
+            this.Text = "Cypher";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,4 @@
-﻿namespace ModelApp.DBTools.Views
+﻿namespace ModelApp.AppTools.Views
 {
     partial class MainView
     {
@@ -93,7 +93,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainView";
-            this.Text = "DB Tools";
+            this.Text = "App Tools";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();

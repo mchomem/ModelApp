@@ -1,8 +1,8 @@
-﻿using ModelApp.DBTools.Shareds;
+﻿using ModelApp.AppTools.Shareds;
 using ModelApp.Domain.Entities;
 using ModelApp.Service.Services.Interfaces;
 
-namespace ModelApp.DBTools.Views
+namespace ModelApp.AppTools.Views
 {
     public partial class DBICView : MdiChieldFormBase
     {
