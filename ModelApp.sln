@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.WebApi", "ModelApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.EF", "ModelApp.EF\ModelApp.EF.csproj", "{2808C4AA-5A0F-4C4D-8118-E05572424147}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.Site", "ModelApp.Site\ModelApp.Site.csproj", "{2994FB90-8151-4C64-96F5-54E6C6569231}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.OldSite", "ModelApp.OldSite\ModelApp.OldSite.csproj", "{2994FB90-8151-4C64-96F5-54E6C6569231}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelApp.Utils", "ModelApp.Utils\ModelApp.Utils.csproj", "{D7CE7636-286A-40FF-8587-0444AB79ED75}"
 EndProject
