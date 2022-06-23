@@ -10,7 +10,7 @@ namespace ModelApp.Domain.Entities
         public Menu? ParentMenu { get; set; }
         public string? Label { get; set; }
         public string? Page { get; set; }
-        public byte[] ImageIcon { get; set; }
+        public byte[]? ImageIcon { get; set; }
         public string? CssFontAwesomeIcon { get; set; }
         public bool? Active { get; set; }
         public bool? Visible { get; set; }
