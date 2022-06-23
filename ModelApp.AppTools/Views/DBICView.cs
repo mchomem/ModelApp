@@ -1,6 +1,5 @@
 ﻿using ModelApp.AppTools.Shareds;
 using ModelApp.Domain.Entities;
-using ModelApp.Service.Helpers.Interfaces;
 using ModelApp.Service.Services.Interfaces;
 
 namespace ModelApp.AppTools.Views
@@ -12,7 +11,6 @@ namespace ModelApp.AppTools.Views
         private readonly IUserRoleService _userRoleService;
         private readonly IUserService _userService;
         private readonly IMenuService _menuService;
-        private readonly ICypherHelper _cypherHelper;
 
         #endregion
 
@@ -23,13 +21,11 @@ namespace ModelApp.AppTools.Views
                 IUserRoleService userRoleService
                 , IUserService userService
                 , IMenuService menuService
-                , ICypherHelper cypherHelper
             )
         {
             _userRoleService = userRoleService;
             _userService = userService;
             _menuService = menuService;
-            _cypherHelper = cypherHelper;
             InitializeComponent();
         }
 
@@ -42,9 +38,7 @@ namespace ModelApp.AppTools.Views
             this.buttonStart.Enabled = false;
 
             await this.InsertUserRole();
-
             await this.InsertUser();
-
             await this.InsertMenu();
 
             this.buttonStart.Enabled = true;
@@ -130,7 +124,7 @@ namespace ModelApp.AppTools.Views
             await this.InsertMenu("Cliente", "customer-listing.html", "fas fa-users", 2, parentMenuCadastre);
         }
 
-        private async Task InsertMenu(string label, string page, string cssfa, int order, Menu parentMenu = null)
+        private async Task InsertMenu(string label, string page, string cssfa, int order, Menu? parentMenu = null)
         {
             try
             {
