@@ -8,7 +8,7 @@ namespace ModelApp.AppTools.Views
 {
     public partial class DBICView : MdiChieldFormBase
     {
-        #region Friends
+        #region Fields
 
         private readonly ModelAppContext _context;
         private readonly IUserRoleService _userRoleService;
