@@ -1,5 +1,7 @@
-﻿using ModelApp.AppTools.Shareds;
+﻿using Microsoft.EntityFrameworkCore;
+using ModelApp.AppTools.Shareds;
 using ModelApp.Domain.Entities;
+using ModelApp.Infra.Contexts;
 using ModelApp.Service.Services.Interfaces;
 
 namespace ModelApp.AppTools.Views
@@ -8,6 +10,7 @@ namespace ModelApp.AppTools.Views
     {
         #region Friends
 
+        private readonly ModelAppContext _context;
         private readonly IUserRoleService _userRoleService;
         private readonly IUserService _userService;
         private readonly IMenuService _menuService;
@@ -18,11 +21,13 @@ namespace ModelApp.AppTools.Views
 
         public DBICView
             (
-                IUserRoleService userRoleService
+                ModelAppContext context
+                , IUserRoleService userRoleService
                 , IUserService userService
                 , IMenuService menuService
             )
         {
+            _context = context;
             _userRoleService = userRoleService;
             _userService = userService;
             _menuService = menuService;
@@ -37,6 +42,8 @@ namespace ModelApp.AppTools.Views
         {
             this.buttonStart.Enabled = false;
 
+            await this.CreateDataBase();
+
             await this.InsertUserRole();
             await this.InsertUser();
             await this.InsertMenu();
@@ -49,6 +56,20 @@ namespace ModelApp.AppTools.Views
         #endregion
 
         #region Methods
+
+        private async Task CreateDataBase()
+        {
+            try
+            {
+                // TODO: check if database already exists
+                await Task.Run(() => _context.Database.Migrate());
+                this.dataGridViewResult.Rows.Add("Database Created", "OK");
+            }
+            catch (Exception e)
+            {
+                this.dataGridViewResult.Rows.Add("Database Create", $"Error\nMessage {e.Message} \n StackTrace {e.StackTrace}");
+            }
+        }
 
         private async Task InsertUserRole()
         {
@@ -128,6 +149,7 @@ namespace ModelApp.AppTools.Views
         {
             try
             {
+                // FIX: query fail to check if Menu already exists.
                 IEnumerable<Menu> menus = await _menuService.GetAllAsync(new Menu() { Label = label });
 
                 if (menus.Count() > 0)
