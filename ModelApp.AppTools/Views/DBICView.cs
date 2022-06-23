@@ -61,9 +61,15 @@ namespace ModelApp.AppTools.Views
         {
             try
             {
-                // TODO: check if database already exists
-                await Task.Run(() => _context.Database.Migrate());
-                this.dataGridViewResult.Rows.Add("Database Created", "OK");
+                if (!await _context.Database.CanConnectAsync())
+                {
+                    await Task.Run(() => _context.Database.Migrate());
+                    this.dataGridViewResult.Rows.Add("Database Created", "OK");
+                }
+                else
+                {
+                    this.dataGridViewResult.Rows.Add("Database Created", "Already exists");
+                }                
             }
             catch (Exception e)
             {
