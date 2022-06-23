@@ -7,7 +7,7 @@ namespace ModelApp.Domain.Entities
     {
         public int? Id { get; set; }
         public int? ParentMenuId { get; set; }
-        public Menu ParentMenu { get; set; }
+        public Menu? ParentMenu { get; set; }
         public string? Label { get; set; }
         public string? Page { get; set; }
         public byte[] ImageIcon { get; set; }

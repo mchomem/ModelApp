@@ -155,7 +155,6 @@ namespace ModelApp.AppTools.Views
         {
             try
             {
-                // FIX: query fail to check if Menu already exists.
                 IEnumerable<Menu> menus = await _menuService.GetAllAsync(new Menu() { Label = label });
 
                 if (menus.Count() > 0)
