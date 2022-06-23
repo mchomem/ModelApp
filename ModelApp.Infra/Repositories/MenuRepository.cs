@@ -19,11 +19,12 @@ namespace ModelApp.Infra.Repositories
             _modelAppContext.Add(entity);
 
             entity.ParentMenu = await this.DetailAsync(new Menu() { Id = entity.ParentMenuId });
-            if (entity.ParentMenu == null)
-                throw new Exception("ParentMenu not found");
 
-            _modelAppContext.Menu.Attach(entity.ParentMenu);
-            _modelAppContext.Entry(entity.ParentMenu).State = EntityState.Unchanged;
+            if (entity.ParentMenu != null)
+            {
+                _modelAppContext.Menu.Attach(entity.ParentMenu);
+                _modelAppContext.Entry(entity.ParentMenu).State = EntityState.Unchanged;
+            }           
 
             await _modelAppContext.SaveChangesAsync();
             return _modelAppContext.Entry(entity).Entity;

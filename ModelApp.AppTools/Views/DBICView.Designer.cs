@@ -65,17 +65,17 @@
             // 
             // Operation
             // 
-            this.Operation.FillWeight = 200F;
+            this.Operation.FillWeight = 150F;
             this.Operation.HeaderText = "Operation";
             this.Operation.Name = "Operation";
-            this.Operation.Width = 200;
+            this.Operation.Width = 150;
             // 
             // Status
             // 
-            this.Status.FillWeight = 150F;
+            this.Status.FillWeight = 300F;
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
-            this.Status.Width = 150;
+            this.Status.Width = 300;
             // 
             // DBICView
             // 

@@ -37,22 +37,20 @@ namespace ModelApp.AppTools.Views
 
         #region Events
 
-        private void buttonStart_Click(object sender, EventArgs e)
+        private async void buttonStart_Click(object sender, EventArgs e)
         {
-            // this.backgroundWorker.RunWorkerAsync();
+            this.buttonStart.Enabled = false;
+
+            await this.InsertUserRole();
+
+            await this.InsertUser();
+
+            await this.InsertMenu();
+
+            this.buttonStart.Enabled = true;
+
+            MessageBox.Show(this, "Done", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        // TODO: add a backgroundWorker control and test togheter async/await methods.
-
-        //private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        //{
-        //    this.buttonStart.Enabled = false;
-        //    this.InsertUserRole();
-        //    this.InsertUser();
-        //    this.InsertMenu();
-        //    this.buttonStart.Enabled = true;
-        //    MessageBox.Show(this, "Done", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //}
 
         #endregion
 
@@ -70,17 +68,17 @@ namespace ModelApp.AppTools.Views
 
                 if (userRoles.Count() > 0)
                 {
-                    this.dataGridViewResult.Rows.Add("UserRole Select", "Already exists");
+                    this.dataGridViewResult.Rows.Add("UserRole Query", "Already exists");
                     return;
                 }
 
-                this.dataGridViewResult.Rows.Add("UserRole Select", "No exists");
+                this.dataGridViewResult.Rows.Add("UserRole Query", "No exists");
                 await _userRoleService.AddAsync(userRole);
-                this.dataGridViewResult.Rows.Add("UserRole Insert", "OK");
+                this.dataGridViewResult.Rows.Add("UserRole Add", "OK");
             }
             catch (Exception e)
             {
-                this.dataGridViewResult.Rows.Add("UserRole Insert", $"Error\nMessage {e.Message} \n StackTrace {e.StackTrace}");
+                this.dataGridViewResult.Rows.Add("UserRole Add", $"Error\nMessage {e.Message} \n StackTrace {e.StackTrace}");
             }
         }
 
@@ -89,9 +87,10 @@ namespace ModelApp.AppTools.Views
             try
             {
                 User user = new User();
+                user.Login = "admin";
                 user.Name = "admin";
-                user.Password = _cypherHelper.Encrypt("admin");
-                user.SecretPhrase = _cypherHelper.Encrypt("Master of system");
+                user.Password = "admin";
+                user.SecretPhrase = "Master of system";
                 user.Email = "misael.homem@gmail.com";
                 user.Active = true;
                 user.Avatar = null;
@@ -101,37 +100,37 @@ namespace ModelApp.AppTools.Views
 
                 if (users.Count() > 0)
                 {
-                    this.dataGridViewResult.Rows.Add("User Select", "Already exists");
+                    this.dataGridViewResult.Rows.Add("User Query", "Already exists");
                     return;
                 }
 
-                this.dataGridViewResult.Rows.Add("User Select", "No exists");
+                this.dataGridViewResult.Rows.Add("User Query", "No exists");
                 await _userService.AddAsync(user);
-                this.dataGridViewResult.Rows.Add("User Insert", "OK");
+                this.dataGridViewResult.Rows.Add("User Add", "OK");
             }
             catch (Exception e)
             {
-                this.dataGridViewResult.Rows.Add("User Insert", string.Format("Error\nMessage {0} \n StackTrace {1}", e.Message, e.StackTrace));
+                this.dataGridViewResult.Rows.Add("User Add", string.Format("Error\nMessage {0} \n StackTrace {1}", e.Message, e.StackTrace));
             }
         }
 
-        private async void InsertMenu()
+        private async Task InsertMenu()
         {
-            this.InsertMenu("Home", "Home.html", "fas fa-home", 1);
+            await this.InsertMenu("Home", "Home.html", "fas fa-home", 1);
 
-            this.InsertMenu("Administração", "#", "fas fa-cogs", 2);
-            this.InsertMenu("Cadastros", "#", "fas fa-book", 3);
+            await this.InsertMenu("Administração", "#", "fas fa-cogs", 2);
+            await this.InsertMenu("Cadastros", "#", "fas fa-book", 3);
 
             Menu parentMenuAdmin = await _menuService.GetAsync(new Menu() { Label = "Administração" });
-            this.InsertMenu("Papel de usuário", "userrole-listing.html", "fas fa-user-tie", 1, parentMenuAdmin);
-            this.InsertMenu("Usuário", "user-listing.html", "fas fa-user", 2, parentMenuAdmin);
-            this.InsertMenu("Menu", "menu-listing.html", "fas fa-ellipsis-v", 3, parentMenuAdmin);
+            await this.InsertMenu("Papel de usuário", "userrole-listing.html", "fas fa-user-tie", 1, parentMenuAdmin);
+            await this.InsertMenu("Usuário", "user-listing.html", "fas fa-user", 2, parentMenuAdmin);
+            await this.InsertMenu("Menu", "menu-listing.html", "fas fa-ellipsis-v", 3, parentMenuAdmin);
 
             Menu parentMenuCadastre = await _menuService.GetAsync(new Menu() { Label = "Cadastros" });
-            this.InsertMenu("Cliente", "customer-listing.html", "fas fa-users", 2, parentMenuCadastre);
+            await this.InsertMenu("Cliente", "customer-listing.html", "fas fa-users", 2, parentMenuCadastre);
         }
 
-        private async void InsertMenu(string label, string page, string cssfa, int order, Menu parentMenu = null)
+        private async Task InsertMenu(string label, string page, string cssfa, int order, Menu parentMenu = null)
         {
             try
             {
@@ -139,11 +138,11 @@ namespace ModelApp.AppTools.Views
 
                 if (menus.Count() > 0)
                 {
-                    this.dataGridViewResult.Rows.Add("Menu Select", "Already exists");
+                    this.dataGridViewResult.Rows.Add("Menu Query", "Already exists");
                 }
                 else
                 {
-                    this.dataGridViewResult.Rows.Add("Menu Select", "No exists");
+                    this.dataGridViewResult.Rows.Add("Menu Query", "No exists");
                     Menu menu = new Menu();
                     menu.Label = label;
                     menu.Page = page;
@@ -153,12 +152,12 @@ namespace ModelApp.AppTools.Views
                     menu.Visible = true;
                     menu.Order = order;
                     await _menuService.AddAsync(menu);
-                    this.dataGridViewResult.Rows.Add("Menu Insert", "OK");
+                    this.dataGridViewResult.Rows.Add("Menu Add", "OK");
                 }
             }
             catch (Exception e)
             {
-                this.dataGridViewResult.Rows.Add("Menu Insert", $"Error\nMessage {e.Message} \n StackTrace {e.StackTrace}");
+                this.dataGridViewResult.Rows.Add("Menu Add", $"Error\nMessage {e.Message} \n StackTrace {e.StackTrace}");
             }
         }
 
