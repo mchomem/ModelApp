@@ -34,7 +34,7 @@ namespace ModelApp.Api.Controllers
         {
             try
             {
-                return Ok(await _userService.GetAsync(id));
+                return Ok(await _userService.GetAsync(new User() { Id = id }));
             }
             catch (Exception e)
             {

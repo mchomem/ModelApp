@@ -33,7 +33,7 @@ namespace ModelApp.Api.Controllers
         {
             try
             {
-                return Ok(await _menuService.GetAsync(id));
+                return Ok(await _menuService.GetAsync(new Menu() { Id = id }));
             }
             catch (Exception e)
             {

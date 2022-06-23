@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DBICView));
             this.buttonStart = new System.Windows.Forms.Button();
             this.dataGridViewResult = new System.Windows.Forms.DataGridView();
+            this.Operation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,12 +48,34 @@
             // 
             // dataGridViewResult
             // 
+            this.dataGridViewResult.AllowUserToAddRows = false;
+            this.dataGridViewResult.AllowUserToDeleteRows = false;
+            this.dataGridViewResult.AllowUserToResizeColumns = false;
+            this.dataGridViewResult.AllowUserToResizeRows = false;
             this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewResult.Location = new System.Drawing.Point(12, 53);
+            this.dataGridViewResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Operation,
+            this.Status});
+            this.dataGridViewResult.Location = new System.Drawing.Point(12, 54);
             this.dataGridViewResult.Name = "dataGridViewResult";
+            this.dataGridViewResult.RowHeadersVisible = false;
             this.dataGridViewResult.RowTemplate.Height = 25;
             this.dataGridViewResult.Size = new System.Drawing.Size(363, 293);
             this.dataGridViewResult.TabIndex = 1;
+            // 
+            // Operation
+            // 
+            this.Operation.FillWeight = 200F;
+            this.Operation.HeaderText = "Operation";
+            this.Operation.Name = "Operation";
+            this.Operation.Width = 200;
+            // 
+            // Status
+            // 
+            this.Status.FillWeight = 150F;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.Width = 150;
             // 
             // DBICView
             // 
@@ -72,5 +96,7 @@
 
         private Button buttonStart;
         private DataGridView dataGridViewResult;
+        private DataGridViewTextBoxColumn Operation;
+        private DataGridViewTextBoxColumn Status;
     }
 }

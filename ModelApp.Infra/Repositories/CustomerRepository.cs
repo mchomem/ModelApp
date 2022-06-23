@@ -31,6 +31,11 @@ namespace ModelApp.Infra.Repositories
         public async Task<Customer> DetailAsync(Customer entity)
         {
             return await _modelAppContext.Customer
+                .Where(x =>
+                (
+                    (!entity.Id.HasValue || x.Id.Value == entity.Id.Value)
+                    && (string.IsNullOrEmpty(entity.Name) || x.Name == entity.Name)
+                ))
                 .FirstOrDefaultAsync(x => x.Id == entity.Id);
         }
 

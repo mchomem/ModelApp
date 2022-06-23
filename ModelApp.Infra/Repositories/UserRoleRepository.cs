@@ -31,7 +31,12 @@ namespace ModelApp.Infra.Repositories
         public async Task<UserRole> DetailAsync(UserRole entity)
         {
             return await _modelAppContext.UserRole
-                .FirstOrDefaultAsync(x => x.Id == entity.Id);
+                .Where(x =>
+                (
+                    (!entity.Id.HasValue || x.Id.Value == entity.Id.Value)
+                    && (string.IsNullOrEmpty(entity.Name) || x.Name == entity.Name)
+                ))
+                .FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<UserRole>> RetrieveAsync(UserRole? entity)

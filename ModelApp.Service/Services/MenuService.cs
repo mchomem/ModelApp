@@ -28,9 +28,9 @@ namespace ModelApp.Service.Services
             return await _menuRepository.RetrieveAsync(entity);
         }
 
-        public async Task<Menu> GetAsync(int id)
+        public async Task<Menu> GetAsync(Menu menu)
         {
-            return await _menuRepository.DetailAsync(new Menu() { Id = id });
+            return await _menuRepository.DetailAsync(menu);
         }
 
         public async Task<Menu> RefreshAsync(int id, Menu entity)

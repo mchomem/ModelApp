@@ -28,9 +28,9 @@ namespace ModelApp.Service.Services
             return await _userRoleRepository.RetrieveAsync(entity);
         }
 
-        public async Task<UserRole> GetAsync(int id)
+        public async Task<UserRole> GetAsync(UserRole userRole)
         {
-            return await _userRoleRepository.DetailAsync(new UserRole() { Id = id });
+            return await _userRoleRepository.DetailAsync(userRole);
         }
 
         public async Task<UserRole> RefreshAsync(int id, UserRole entity)

@@ -33,7 +33,7 @@ namespace ModelApp.Api.Controllers
         {
             try
             {
-                return Ok(await _userRoleService.GetAsync(id));
+                return Ok(await _userRoleService.GetAsync(new UserRole() { Id = id }));
             }
             catch (Exception e)
             {

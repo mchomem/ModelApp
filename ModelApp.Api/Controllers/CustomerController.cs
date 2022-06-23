@@ -33,7 +33,7 @@ namespace ModelApp.Api.Controllers
         {
             try
             {
-                return Ok(await _customerService.GetAsync(id));
+                return Ok(await _customerService.GetAsync(new Customer() { Id = id }));
             }
             catch (Exception e)
             {

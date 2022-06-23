@@ -37,9 +37,9 @@ namespace ModelApp.Service.Services
             return await _userRepository.RetrieveAsync(entity);
         }
 
-        public async Task<User> GetAsync(int id)
+        public async Task<User> GetAsync(User user)
         {
-            return await _userRepository.DetailAsync(new User() { Id = id });
+            return await _userRepository.DetailAsync(user);
         }
 
         public async Task<User> RefreshAsync(int id, User entity)

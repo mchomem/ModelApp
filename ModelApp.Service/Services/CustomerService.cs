@@ -28,9 +28,9 @@ namespace ModelApp.Service.Services
             return await _customerRepository.RetrieveAsync(entity);
         }
 
-        public async Task<Customer> GetAsync(int id)
+        public async Task<Customer> GetAsync(Customer customer)
         {
-            return await _customerRepository.DetailAsync(new Customer() { Id = id });
+            return await _customerRepository.DetailAsync(customer);
         }
 
         public async Task<Customer> RefreshAsync(int id, Customer entity)

@@ -48,7 +48,12 @@ namespace ModelApp.Infra.Repositories
         {
             return await _modelAppContext.Menu
                     .Include(x => x.ParentMenu)
-                    .FirstOrDefaultAsync(x => x.Id == entity.Id);
+                    .Where(x =>
+                    (
+                        (!entity.Id.HasValue || x.Id == entity.Id)
+                        && (string.IsNullOrEmpty(entity.Label) || x.Label == entity.Label)
+                    ))
+                    .FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Menu>> RetrieveAsync(Menu? entity)
