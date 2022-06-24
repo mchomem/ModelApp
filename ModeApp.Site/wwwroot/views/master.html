@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="interface/style/libs/w3.css" />
+    <link rel="stylesheet" href="interface/style/libs/fontawesome-free-5.2.0-web/css/all.css" />
+    <link rel="stylesheet" href="interface/style/master.css" />
+    <link rel="icon" href="interface/image/group.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript" src="interface/js/ui-component/dialog.js"></script>
+    <script type="text/javascript" src="interface/js/ui-component/menu.js"></script>
+    <script type="text/javascript" src="interface/js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../views/interface/js/utils.js"></script>
+    <script type="text/javascript" src="../views/interface/js/server.js"></script>
+    <script type="text/javascript" src="../views/interface/js/master.js"></script>
+    <script type="text/javascript" src="../views/interface/js/home.js"></script>
+    <script type="text/javascript" src="../views/interface/js/customer-listing.js"></script>
+    <script type="text/javascript" src="../views/interface/js/customer-maintenance.js"></script>
+    <script type="text/javascript" src="../views/interface/js/user-listing.js"></script>
+    <script type="text/javascript" src="../views/interface/js/user-maintenance.js"></script>
+    <script type="text/javascript" src="../views/interface/js/userrole-listing.js"></script>
+    <script type="text/javascript" src="../views/interface/js/userrole-maintenance.js"></script>
+    <script type="text/javascript" src="../views/interface/js/menu-listing.js"></script>
+    <script type="text/javascript" src="../views/interface/js/menu-maintenance.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            Master.init();
+            Menu.init();
+        });
+    </script>
+    <title>App</title>
+</head>
+<body>
+    <div id="menuContainerMob" class="w3-sidebar w3-bar-block w3-border-right w3-indigo"></div>
+
+    <header class="w3-container w3-indigo w3-display-container">
+        <div class="w3-bar w3-padding-16">
+            <button id="btnMobMenuBar" class="w3-bar-item w3-button w3-round w3-indigo" type="button">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+            <button id="toHome" class="w3-bar-item w3-button w3-round" type="button">App</button>
+            <button id="btnNewLogin" class="w3-button w3-green w3-round w3-hide w3-margin-left w3-right" type="button">
+                <i class="fas fa-user-friends"></i>
+            </button>
+            <button id="btnLogout" class="w3-button w3-green w3-round w3-margin-left w3-right" type="button">
+                <span>Sair</span>
+                <i class="fas fa-door-open"></i>
+            </button>
+            <button id="btnUserData" class="w3-button w3-indigo w3-border w3-border-white w3-round w3-margin-left w3-right" type="button">
+                <span id="spanUser"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="w3-row">
+        <aside id="asMenu" class="w3-col s12 m3 l2">
+            <div class="w3-card-4 w3-margin">
+                <div id="menuContainer" class="w3-bar-block">
+                    <div>
+                        <a class="w3-bar-item w3-button w3-indigo w3-center" href="#">
+                            <i class="fa fa-spinner fa-3x w3-spin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <section id="content" class="w3-col s12 m9 l10"></section>
+    </div>
+</body>
+</html>

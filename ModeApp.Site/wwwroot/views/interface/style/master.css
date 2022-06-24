@@ -1,0 +1,42 @@
+﻿.loading div {
+    height:200px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#menuContainerMob {
+    position: fixed;
+    transition: 0.5s;
+    width: 0px;
+    z-index: 1;
+}
+
+#thEdit {
+    width:50px;
+}
+
+#thDelete {
+    width: 50px;
+}
+
+/* Acima de 600px esconde o botão de menu mobile e o menu mobile */
+@media only screen and (min-width: 600px) {
+    #btnMobMenuBar {
+        display: none;
+    }
+    #mobMenu {
+        display: none;
+    }
+}
+
+/* Abaixo de 600px esconde o menu desktop */
+@media only screen and (max-width: 600px) {
+    #asMenu {
+        display: none;
+    }
+}
+
+#imgAvatar {
+    max-height: 128px;
+    max-width: 128px;
+}

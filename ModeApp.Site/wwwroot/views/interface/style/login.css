@@ -1,0 +1,11 @@
+﻿body {
+    background-color: black;
+    background-image: url(../image/cr-login-bg.jpg); /* Tool to Random Background Generators http://dragdropsite.github.io/waterpipe.js/ */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.6);
+}

@@ -42,7 +42,7 @@ namespace ModelApp.Api.Controllers
             }
         }
 
-        [HttpGet("/authentication")]
+        [HttpGet("authentication")]
         public async Task<ActionResult<UserDto>> GetAuthentication(string login, string password)
         {
             try

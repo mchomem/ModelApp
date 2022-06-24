@@ -1,0 +1,49 @@
+﻿<div class="w3-panel">
+    <div class="w3-card-4">
+        <div class="w3-container w3-indigo">
+            <h2><i class="fas fa-user-tie"></i> Papel de usuário</h2>
+        </div>
+        <div class="loading">
+            <div class="w3-text-indigo">
+                <i class="fa fa-spinner fa-4x w3-spin"></i>
+            </div>
+        </div>
+        <form id="frmUserRoleMaintenance" class="w3-container w3-hide">
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col m8 l4">
+                        <label>Nome</label>
+                        <input id="txtName" class="w3-input w3-border w3-round" type="text" maxlength="100">
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col m8 l4">
+                        <label>Descrição</label>
+                        <textarea id="txtDescription" class="w3-input w3-border w3-round" style="resize:none;" rows="5"></textarea>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s6 m2 l1">
+                        <input id="btnSave" class="w3-btn w3-block w3-indigo w3-round" type="button" value="Salvar" />
+                    </div>
+                    <div class="w3-col s6 m2 l1">
+                        <input id="btnCancel" class="w3-btn w3-block w3-border w3-border-indigo w3-round" type="button" value="Cancelar" />
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m12 l12">
+                        <div id="dialogContainer"></div>
+                    </div>
+                </div>
+            </p>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">UserRoleMaintenance.init();</script>

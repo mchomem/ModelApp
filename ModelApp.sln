@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelApp.Infra", "ModelApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelApp.AppTools", "ModelApp.AppTools\ModelApp.AppTools.csproj", "{7209F6D4-3ED9-486D-9A1D-93BDDD8027EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeApp.Site", "ModeApp.Site\ModeApp.Site.csproj", "{0A670632-B879-4870-A8CA-A903CCF30C66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{7209F6D4-3ED9-486D-9A1D-93BDDD8027EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7209F6D4-3ED9-486D-9A1D-93BDDD8027EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7209F6D4-3ED9-486D-9A1D-93BDDD8027EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A670632-B879-4870-A8CA-A903CCF30C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A670632-B879-4870-A8CA-A903CCF30C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A670632-B879-4870-A8CA-A903CCF30C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A670632-B879-4870-A8CA-A903CCF30C66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +93,7 @@ Global
 		{9428D087-6D0A-4FC0-8553-10971A65B8DA} = {1EB205E1-36F0-487D-B951-D6A4FC21ED2C}
 		{DF4763AF-C1A2-4B69-8B2A-62DCEDFDB317} = {B4C2ADEB-A593-4F36-93CB-8D999C56732D}
 		{7209F6D4-3ED9-486D-9A1D-93BDDD8027EA} = {36F13CB1-BBA4-4E2B-B131-37C2ABF44E3E}
+		{0A670632-B879-4870-A8CA-A903CCF30C66} = {36F13CB1-BBA4-4E2B-B131-37C2ABF44E3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A40D4CB3-67B0-4306-9839-2E368C5A4777}

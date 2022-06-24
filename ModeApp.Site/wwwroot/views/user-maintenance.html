@@ -1,0 +1,118 @@
+﻿<div class="w3-panel">
+    <div class="w3-card-4">
+        <div class="w3-container w3-indigo">
+            <h2><i class="fas fa-user"></i> Usuário</h2>
+        </div>
+        <div class="loading">
+            <div class="w3-text-indigo">
+                <i class="fa fa-spinner fa-4x w3-spin"></i>
+            </div>
+        </div>
+        <form id="frmUserMaintenance" class="w3-container w3-hide">
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m5 l3">
+                        <label>Nome</label>
+                        <input id="txtName" class="w3-input w3-border w3-round" type="text" maxlength="100">
+                    </div>
+                    <div class="w3-col s12 m5 l3">
+                        <label>Papel de usuário</label>
+                        <select id="selUserRole" class="w3-input w3-border w3-round"></select>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m5 l3">
+                        <label>E-mail</label>
+                        <input id="txtEmail" class="w3-input w3-border w3-round" type="text" />
+                    </div>
+                    <div class="w3-col s12 m5 l3">
+                        <label>Frase secreta</label>
+                        <input id="txtSecretPhrase" class="w3-input w3-border w3-round" type="text" maxlength="500" />
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m5 l2">
+                        <label>Senha</label>
+                        <input id="txtPassword" class="w3-input w3-border w3-round w3-bar-item" type="password" maxlength="50" />
+                    </div>
+                    
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m5 l2">
+                        <label>Confirmar senha</label>
+                        <input id="txtConfirmPassword" class="w3-input w3-border w3-round" type="password" maxlength="50" />
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m8 l2">
+                        <button id="btnResetPassword" class="w3-btn w3-round w3-indigo" type="button">Redefinir senha</button>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m4 l2">
+                        <input id="chkActive" class="w3-check" type="checkbox">
+                        <label>Ativo</label>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m8 l4">
+                        <label>Avatar</label>
+                        <input id="fupAvatar" class="w3-input w3-border w3-round" type="file" />
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m8 l4">
+                        <img id="imgAvatar" class="w3-border w3-round" src="interface/image/avatar.jpeg" />
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s6 m2 l1">
+                        <button id="btnRemoveImage" class="w3-button w3-block w3-red w3-round" type="button">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s6 m2 l1">
+                        <input id="btnSave" class="w3-btn w3-block w3-indigo w3-round" type="button" value="Salvar" />
+                    </div>
+                    <div class="w3-col s6 m2 l1">
+                        <input id="btnCancel" class="w3-btn w3-block w3-border w3-border-indigo w3-round" type="button" value="Cancelar" />
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="w3-row-padding">
+                    <div class="w3-col s12 m12 l12">
+                        <div id="dialogContainer"></div>
+                    </div>
+                </div>
+            </p>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">UserMaintenance.init();</script>
