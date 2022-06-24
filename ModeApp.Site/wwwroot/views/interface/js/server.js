@@ -1,9 +1,9 @@
 ﻿Server = {
 
     Configuration: {
-        schema: 'http'
+        schema: 'https'
         , domainOrIp: 'localhost'
-        , port: '53443' // 50000|53443
+        , port: '7141'
     }
     , setService: function (service) {
         var server = Server.Configuration.schema.concat('://')

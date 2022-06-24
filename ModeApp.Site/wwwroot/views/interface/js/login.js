@@ -166,7 +166,7 @@
             }
         };
 
-        xhttp.open('get', Server.setService('api/users/GetUserLogin?name=' + self.$txtUser.value + '&password=' + self.$txtPassword.value), true);
+        xhttp.open('get', Server.setService('api/user/authentication?login=' + self.$txtUser.value + '&password=' + self.$txtPassword.value), true);
         xhttp.send();
     }
 
@@ -209,7 +209,7 @@
                 }
             };
 
-            xhttp.open('get', Server.setService('api/users/GetUserLogin?name=' + user + '&password=' + password), true);
+            xhttp.open('get', Server.setService('api/user/authentication?login=' + user + '&password=' + password), true);
             xhttp.send();
         }
     }
