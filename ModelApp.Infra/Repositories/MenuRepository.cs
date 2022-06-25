@@ -70,9 +70,12 @@ namespace ModelApp.Infra.Repositories
                         && (!entity.Active.HasValue || x.Active.Value == entity.Active.Value)
                         && (!entity.Visible.HasValue || x.Visible.Value == entity.Visible.Value)
                         && (!entity.Order.HasValue || x.Order.Value == entity.Order.Value)
-                    )).ToListAsync();
+                    ))
+                    .OrderBy(x => x.Order)
+                    .ToListAsync();
             else
                 return await _modelAppContext.Menu
+                    .OrderBy(x => x.Order)
                     .ToListAsync();
         }
 

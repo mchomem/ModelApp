@@ -11,7 +11,9 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
 builder.Services.AddEndpointsApiExplorer();
 
 #region Dependence Injection setup

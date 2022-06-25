@@ -27,7 +27,7 @@
                 Menu.mount(JSON.parse(this.responseText), self.$menuContainer, self.$menuContainerMob);
             }
         };
-        xhttp.open('get', Server.setService('api/menus?filter=ordenated'), true);
+        xhttp.open('get', Server.setService('api/menu'), true);
         xhttp.send();
     }
 
